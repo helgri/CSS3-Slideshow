@@ -1,0 +1,109 @@
+//base typo colors
+@boilerplate-black:#000;
+@boilerplate-white:#fff;
+@boilerplate-grey:#ccc;
+
+//background border colors
+@boilerplate-body:#E54B25;
+
+@boilerplate-image-path:"../../images";
+@boilerplate-font-path:"../../fonts";
+
+
+// shadow ---------------------------------------------------------------------
+
+.boilerplate-shadow(@val:none){
+  -webkit-box-shadow:@val;
+  -moz-box-shadow:@val;
+  -ms-box-shadow:@val;
+  -o-box-shadow:@val;
+  box-shadow:@val;
+}
+
+#boilerplate-shadow{
+  .generic(@val){
+    .boilerplate-shadow(@val);
+  }
+}
+
+// border-radius --------------------------------------------------------------
+
+.boilerplate-border-radius(@val:0) {
+  -webkit-border-radius:@val;
+  -moz-border-radius:@val;
+  -ms-border-radius:@val;
+  -o-border-radius:@val;
+  border-radius:@val;
+}
+
+#boilerplate-border-radius {
+  .generic(@val){
+    .boilerplate-border-radius(@val);
+  }
+}
+
+
+// transition -----------------------------------------------------------------
+
+.boilerplate-transition(@val1:0s,@val2:all,@val3:ease-out) {
+  @style:@val2 @val1 @val3;
+  -webkit-transition: @style;
+  -moz-transition: @style;
+  -ms-transition: @style;
+  -o-transition: @style;
+  transition: @style;
+}
+
+#boilerplate-transition{
+  .short(){
+    .boilerplate-transition(.2s);
+  }
+  .middle(){
+    .boilerplate-transition(.5s);
+  }
+}
+
+// transform ------------------------------------------------------------------
+
+.boilerplate-transform(@val:scale(0)) {
+  -webkit-transform: @val;
+  -moz-transform: @val;
+  -ms-transform: @val;
+  -o-transform: @val;
+  transform: @val;
+}
+
+.boilerplate-transform-origin(@val:50%){
+    -webkit-transform-origin: @val;
+    -moz-transform-origin: @val;
+    -ms-transform-origin: @val;
+    -o-transform-origin: @val;
+    transform-origin: @val;
+}
+
+#boilerplate-transform {
+  .generic(@val){
+    .boilerplate-transform(@val);
+  }
+}
+
+#boilerplate-transform-origin{
+  .generic(@val){
+    .boilerplate-transform-origin(@val);
+  }
+}
+// filter ----------------------------------------------------------------------
+
+.boilerplate-filter(@val:none){
+    -webkit-filter: @val;
+    -moz-filter: @val;
+    -ms-filter: @val;
+    -o-filter: @val;
+    filter: @val;
+}
+
+#boilerplate-filter{
+  .generic(@val){
+      .boilerplate-filter(@val);
+  }
+}

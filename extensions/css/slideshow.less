@@ -1,0 +1,70 @@
+/*
+ *  This Slideshow demonstrates the usage of pointer-events and transitions for easy cross-fades.
+ *  Click the dots or the image itself to browse through the photos. On touch devices swiping is 
+ *  supported as well.
+ *
+ *  (iPad, Chrome, Safari, Firefox and IE7+)
+ *
+ */
+
+@padding:15px;
+@paddingBottom:60px;
+@dimX:450px;
+@dimY:350px;
+
+#slideshow{
+    position: absolute;
+    top:50%;
+    left:50%;
+    padding: @padding+@dimY @padding 0;
+    width: @dimX;
+    height: @paddingBottom;
+    margin: (@padding+@dimY+@paddingBottom)/-2 0 0 (@dimX+2*@padding)/-2;
+    text-align: center;
+    background: @boilerplate-white;
+    #boilerplate-shadow > .generic(0 0 25px rgba(0,0,0,.8));
+    li{
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 25px 0 0;
+        cursor: pointer;
+        background: @boilerplate-grey;
+        #boilerplate-border-radius > .generic(10px);
+        #boilerplate-shadow > .generic(0 2px 3px rgba(85,85,85,.4) inset);
+        #boilerplate-transition > .short;
+        *+html & {
+            display: inline;
+            line-height: 10px;
+            margin-right: 3px;
+        }
+        &:hover{
+            .no-touch & {
+                background: darken(@boilerplate-grey,25);
+            }
+        }
+        &.active{
+            background: darken(@boilerplate-grey,75);
+            img{
+                display: block;
+                .pointerevents &{
+                    opacity: 1;
+                    pointer-events:auto;
+                }
+            }
+        }
+        img{
+            display: none;
+            position: absolute;
+            left: @padding;
+            top:@padding;
+            //#boilerplate-filter > .generic(sepia(1)); //style
+            #boilerplate-transition > .middle;
+            .pointerevents &{
+                display: block;
+                opacity: 0;
+                pointer-events:none;
+            }
+        }
+    }
+}

@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #e54b25;
+}
+dl,
+dt,
+dd,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/*
+ *  This Slideshow demonstrates the usage of pointer-events and transitions for easy cross-fades.
+ *  Click the dots or the image itself to browse through the photos. On touch devices swiping is 
+ *  supported as well.
+ *
+ *  (iPad, Chrome, Safari, Firefox and IE7+)
+ *
+ */
+#slideshow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 365px 15px 0;
+  width: 450px;
+  height: 60px;
+  margin: -212.5px 0 0 -240px;
+  text-align: center;
+  background: #ffffff;
+  -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+  -ms-box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+  -o-box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+}
+#slideshow li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 25px 0 0;
+  cursor: pointer;
+  background: #cccccc;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 2px 3px rgba(85, 85, 85, 0.4) inset;
+  -moz-box-shadow: 0 2px 3px rgba(85, 85, 85, 0.4) inset;
+  -ms-box-shadow: 0 2px 3px rgba(85, 85, 85, 0.4) inset;
+  -o-box-shadow: 0 2px 3px rgba(85, 85, 85, 0.4) inset;
+  box-shadow: 0 2px 3px rgba(85, 85, 85, 0.4) inset;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+* + html #slideshow li {
+  display: inline;
+  line-height: 10px;
+  margin-right: 3px;
+}
+.no-touch #slideshow li:hover {
+  background: #8c8c8c;
+}
+#slideshow li.active {
+  background: #0d0d0d;
+}
+#slideshow li.active img {
+  display: block;
+}
+.pointerevents #slideshow li.active img {
+  opacity: 1;
+  pointer-events: auto;
+}
+#slideshow li img {
+  display: none;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.pointerevents #slideshow li img {
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+}
